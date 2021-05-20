@@ -1,0 +1,46 @@
+body{
+    background:url('../image/scenery.jpg');
+    background-repeat:no-repeat;
+    background-size:100% auto;
+}
+
+#user{
+    text-decoration-color: #74ebd5;
+}
+.slogn,.siteurl{
+    width: 98%;
+    color: #fff;
+    margin: 10px auto;
+    font-size: 26px;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+}
+.slogn{
+    margin-top: 40px;
+}
+.siteurl{
+    width: 70%;
+    padding: 20px 0 15px;
+    border-bottom: 1px solid #fff;
+}
+.siteurl h1{
+    font-weight: 200;
+    font-size: 12px;
+}
+.top_nav{
+    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+    text-align: center;
+}
+.top_nav:hover{
+    text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+#top_footer{
+    text-align: center;
+}
+#top_footer a{
+    color:#858585;
+    text-decoration: none;
+}
+#top_footer a:hover{
+    text-decoration: underline;
+}
