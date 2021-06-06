@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 @Controller
 //@Scope("singleton") //只实例化一个bean对象（即每次请求都使用同一个bean对象），默认是singleton
@@ -18,9 +18,9 @@ public class WebController {
     @Autowired
     private UserService userService;
 
-    private User userSave;//将登录时的信息保存起来
+//    private User userSave;//将登录时的信息保存起来
 
-    private Logger logger = Logger.getLogger(String.valueOf(WebController.class));
+//    private Logger logger = Logger.getLogger(String.valueOf(WebController.class));
 
     @RequestMapping(value = "/registerButton")//登录界面的注册按钮 , method = RequestMethod.POST
     public String registerButton(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -43,12 +43,14 @@ public class WebController {
         String password = request.getParameter("password");
         user.setAccount(account);
         user.setPassWord(password);
-        int state = userService.userLogin(user);//判断账号密码是否正确
+
+        User u = userService.userLogin(user);//判断账号密码是否正确
 
         System.out.println("account is:" + account);
         System.out.println("password is:" + password);
-        if (state == 1) {
-            userSave = user;
+        if (u != null) {
+//            userSave = user;
+            request.setAttribute("user", u);
             return "success";
         } else {
             System.out.println("账号密码错误！");
@@ -60,18 +62,21 @@ public class WebController {
     public String register(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = new User();
         //获取输入的账号密码
+//        request.getparameter()获取的是name属性
         String account = request.getParameter("account");
         String password = request.getParameter("password");
         String resure = request.getParameter("resure");
+        String username = request.getParameter("name");
 
         user.setAccount(account);
         user.setPassWord(password);
+        user.setUsername(username);
         //判断账号密码是否正确
         if ((account.length() > 0 && account.length() < 16) &&
                 (password.length() > 0 && password.length() < 16) &&
                 (resure.length() > 0 && resure.length() < 16)
         ) {
-            if (password.equals(resure)) {
+            if (password.equals(resure) && username != null) {
                 int state = userService.userRegister(user);
                 if (state == 1) {
                     System.out.println("注册成功！");
@@ -90,6 +95,7 @@ public class WebController {
     public String clock(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return "clock";
     }
+
     @RequestMapping(value = "/success")//登陆成功界面
     public String success(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return "success";

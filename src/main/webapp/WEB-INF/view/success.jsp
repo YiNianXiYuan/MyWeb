@@ -16,7 +16,10 @@
 
 <div id="top">
     <div id="user">
-        欢迎您！<%=request.getParameter("account")%>
+        欢迎您！${user.username}
+<%--        ${user.account}--%>
+<%--        获取输入的账号--%>
+<%--        <%=request.getParameter("account")%>--%>
     </div>
 
     <div>

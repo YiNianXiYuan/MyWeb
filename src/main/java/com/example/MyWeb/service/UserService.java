@@ -1,6 +1,6 @@
 package com.example.MyWeb.service;
 
-import com.example.MyWeb.dao.DataDao;
+import com.example.MyWeb.dao.UserDao;
 import com.example.MyWeb.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 public class UserService {
     //注入dao
     @Autowired
-    private DataDao dataDao;
+    private UserDao dataDao;
 
-    public int userLogin(User user) {
+    public User userLogin(User user) {
         return dataDao.login(user);
     }
 
