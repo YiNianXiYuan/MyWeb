@@ -24,10 +24,10 @@
             </div>
             <div class="item">
                 <i class="fa fa-search" style="font-size:24px"></i>
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="passWord" placeholder="Password">
             </div>
         </div>
-        <button type="submit" name="submit">Login</button>
+        <button type="submit" name="submit" id="submit">Login</button>
         <button type="button" name="register" onclick="window.location.href = '/registerButton'">Register</button>
     </div>
 </form>

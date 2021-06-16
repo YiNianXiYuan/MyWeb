@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                         <td class="td_left"><label for="password">密码</label></td>
-                        <td class="td_right"><input type="password" name="password" id="password" placeholder="请输入密码"></td>
+                        <td class="td_right"><input type="password" name="passWord" id="password" placeholder="请输入密码"></td>
                     </tr>
                     <tr>
                         <td class="td_left"><label for="resure">确认密码</label></td>
@@ -39,8 +39,8 @@
                         <td class="td_right"><input type="email" name="email" id="email" placeholder="请输入邮箱"></td>
                     </tr>
                     <tr>
-                        <td class="td_left"><label for="name">姓名</label></td>
-                        <td class="td_right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                        <td class="td_left"><label for="username">姓名</label></td>
+                        <td class="td_right"><input type="text" name="username" id="username" placeholder="请输入姓名"></td>
                     </tr>
                     <tr>
                         <td class="td_left"><label for="tel">手机号</label></td>

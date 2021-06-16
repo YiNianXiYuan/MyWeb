@@ -16,17 +16,22 @@
 
 <div id="top">
     <div id="user">
-        欢迎您！${user.username}
-<%--        ${user.account}--%>
-<%--        获取输入的账号--%>
-<%--        <%=request.getParameter("account")%>--%>
+        欢迎您！${userName}
+        <br/>
+<%--        <button name="viewUserInfo" onclick="window.location.href = '/viewUserInfo'">查看当前用户基本信息</button>--%>
+<%--        <a href="/viewUser?account=${account}">查看当前用户信息</a>--%>
+<%--        <a href="/viewAllUser">查看所有用户信息</a>--%>
+        <a href="/userManager">用户管理</a>
+        <%--        ${user.account}--%>
+        <%--        获取输入的账号--%>
+        <%--        <%=request.getParameter("account")%>--%>
     </div>
 
     <div>
         <%--            <jsp:useBean id="time" class="java.util.Date"/>--%>
         <%--            现在时间：<%=time%>--%>
-<%--            <input type="text" id="time">--%>
-            <p class="time" id="time">time</p>
+        <%--            <input type="text" id="time">--%>
+        <p class="time" id="time">time</p>
     </div>
 
     <div id="top_img">
@@ -62,5 +67,6 @@
 <%--</form>--%>
 <%--    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"/>--%>
 <script src="/js/clock.js"></script>
+<%--<script src="/js/login.js"></script>--%>
 </body>
 </html>
